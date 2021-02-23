@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Switch Background color</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <button>Switch color</button>
+        <script type="text/javascript">
+        var color = ["#222f3e", "#FFE4C4", "#8A2BE2", "#0000FF", "#7FFF00", "#DC143C", "#00008B",
+        "#006400","#FF8C00", "#FF1493", "#FF4500"];
+        var i = 0;
+        document.querySelector("button").addEventListener("click", 
+        function() {
+            i = i < color.length ? ++i : 0;
+            document.querySelector("body").style.background = color[i];
+        })
+        </script>
+    </body>
+</html>

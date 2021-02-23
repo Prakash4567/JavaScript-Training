@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Hex Color Code Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1 id="color">#E63C44</h1>
+        <button id="change" type="button">New Color</button>
+    </div>
+
+    <script>
+        var btn = document.getElementById('change');
+        var text = document.getElementById('color');
+
+        var generator = function() {
+            newColor = '#' + 
+            (Math.random()*0xFFFFFF<<0).toString(16);
+            console.log(newColor.length);
+            if(newColor.length < 7) {
+                generator();
+            }
+        }
+
+        btn.addEventListener('click', function() {
+            generator();
+
+            document.body.style.background = newColor;
+            btn.style.color = newColor;
+            text.innerText = newColor;
+        })
+
+    </script>
+</body>
+</html>
